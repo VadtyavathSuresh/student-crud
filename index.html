@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student CRUD</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>Student Management (No Database)</h2>
+    <h2>Student Management System</h2>
 
     <div class="form">
-        <input type="text" id="name" placeholder="Student Name">
-        <input type="text" id="roll" placeholder="Roll Number">
-        <input type="date" id="dob">
-        <input type="text" id="phone" placeholder="Phone Number">
-        <input type="email" id="email" placeholder="Email">
-        <button onclick="saveStudent()">Save</button>
+        <input id="name" placeholder="Student Name">
+        <input id="roll" placeholder="Roll Number">
+        <input id="dob" type="date">
+        <input id="phone" placeholder="Phone Number">
+        <input id="email" placeholder="Email">
+        <button onclick="saveStudent()">Add Student</button>
     </div>
 
     <table>
         <thead>
             <tr>
+                <th>#</th>
                 <th>Name</th>
                 <th>Roll</th>
                 <th>DOB</th>
                 <th>Phone</th>
                 <th>Email</th>
-                <th>Actions</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody id="tableBody"></tbody>
     </table>
 </div>
 
-<script src="/static/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

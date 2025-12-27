@@ -9,12 +9,12 @@ next_id = 1
 def index():
     return render_template("index.html")
 
-# READ
+# STUDENT DATA READ
 @app.route("/students")
 def get_students():
     return jsonify(students)
 
-# CREATE
+# STUDENT DATA CREATE
 @app.route("/add", methods=["POST"])
 def add_student():
     global next_id
@@ -31,7 +31,7 @@ def add_student():
     next_id += 1
     return jsonify({"message": "Student Added"})
 
-# UPDATE
+# STUDENT DATA UPDATE
 @app.route("/update/<int:id>", methods=["PUT"])
 def update_student(id):
     data = request.json
@@ -45,7 +45,7 @@ def update_student(id):
             break
     return jsonify({"message": "Student Updated"})
 
-# DELETE
+# STUDENT DATA DELETE
 @app.route("/delete/<int:id>", methods=["DELETE"])
 def delete_student(id):
     global students
@@ -54,3 +54,4 @@ def delete_student(id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
